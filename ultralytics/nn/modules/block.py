@@ -1212,6 +1212,7 @@ class AAttn(nn.Module):
         self.proj = Conv(all_head_dim, dim, 1, act=False)
 
         self.pe = Conv(all_head_dim, dim, 5, 1, 2, g=dim, act=False)
+        self.qkv = self.qk
 
 
     def forward(self, x):
